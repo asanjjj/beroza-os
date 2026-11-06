@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ดาวน์โหลด Beroza OS ระบบปฏิบัติการลินุกซ์ที่เรียบง่าย สวยงาม และเป็นมิตร">
+  <title>Beroza OS — ดาวน์โหลด</title>
+  <style>
+    :root {
+      --brand: #0f766e; 
+      --brand-dark: #0d5e57;
+      --ink: #1f1f1f;
+      --muted: #666;
+      --paper: #fffffe;
+      --soft: #e8f1f0;
+      --border: #e2e8f0;
+      --max-width: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--brand);
+      font-size: 1.25rem;
+      font-weight: 750;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    .nav-links a:hover { color: var(--brand); }
+
+    .hero {
+      padding: 76px 0 72px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
+    }
+
+    .hero-content { max-width: 760px; }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      font-weight: 650;
+      opacity: .9;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.3rem, 6vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 0 28px;
+      font-size: 1.15rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      background: #fff;
+      color: var(--brand-dark);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .15s, background .15s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #f4fbf7;
+    }
+
+    section { padding: 58px 0; }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      letter-spacing: -.025em;
+    }
+
+    .section-intro {
+      max-width: 720px;
+      margin: 0 0 28px;
+      color: var(--muted);
+    }
+
+    .download-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    }
+
+    .version-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      padding: 3px 9px;
+      border-radius: 99px;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+
+    .download-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.35rem;
+    }
+
+    .download-card p {
+      margin: 4px 0;
+      color: var(--muted);
+    }
+
+    .download-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 180px;
+    }
+
+    .button-primary {
+      padding: 11px 16px;
+      border-radius: 6px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .button-primary:hover { background: var(--brand-dark); }
+
+    .text-link {
+      color: var(--brand-dark);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .info-card {
+      padding: 22px;
+      border-radius: 12px;
+      background: var(--soft);
+      border: 1px solid #e2e8f0;
+    }
+
+    .info-card h3 { margin: 0 0 8px; color: var(--brand-dark); }
+    .info-card p { margin: 0; color: var(--muted); }
+
+    .notice {
+      margin-top: 24px;
+      padding: 16px 18px;
+      border-left: 4px solid var(--brand);
+      background: var(--soft);
+      color: #1f3d3b;
+    }
+
+    footer {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    footer a { color: var(--brand-dark); }
+    
+    footer ul {
+      list-style: none; 
+      padding: 0; 
+      margin: 0; 
+      line-height: 2;
+    }
+
+    @media (max-width: 700px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 16px 0;
+      }
+
+      .nav-links { gap: 14px; }
+
+      .hero { padding: 56px 0; }
+
+      .download-card { grid-template-columns: 1fr; }
+
+      .download-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .button-primary { flex: 1; }
+
+      .info-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container nav" aria-label="เมนูหลัก">
+      <a class="brand" href="#">
+        <img src="kll.png" alt="Beroza Logo" height="28" onerror="this.style.display='none'">
+        Beroza OS
+      </a>
+      <div class="nav-links">
+        <a href="#download">ดาวน์โหลด</a>
+        <a href="#screenshots">ภาพหน้าจอ</a>
+        <a href="#about">เกี่ยวกับระบบ</a>
+        <a href="#faq">คำถามที่พบบ่อย</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="eyebrow">ระบบปฏิบัติการลินุกซ์ที่ออกแบบมาเพื่อคุณ</p>
+        <h1>เริ่มต้นใช้งาน Beroza OS ได้ง่าย ๆ</h1>
+        <p>
+          สัมผัสประสบการณ์ระบบปฏิบัติการที่ผสานความสวยงามเข้ากับประสิทธิภาพ 
+          ดาวน์โหลดไฟล์ติดตั้งและเริ่มต้นใช้งานได้ทันที
+        </p>
+        <a class="button" href="#download">เลือกเวอร์ชันเพื่อดาวน์โหลด</a>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section id="download">
+      <div class="container">
+        <h2>ดาวน์โหลด</h2>
+        <p class="section-intro">
+          เลือกไฟล์ให้ตรงกับอุปกรณ์ของคุณ ตรวจสอบค่า SHA256 ก่อนติดตั้งทุกครั้งเพื่อความปลอดภัย
+        </p>
+
+        <article class="download-card">
+          <div>
+            <span class="version-label">เวอร์ชันแนะนำ</span>
+            <h3>Beroza OS 1.0 LTS</h3>
+            <p>เดสก์ท็อป: KDE Plasma · สถาปัตยกรรม: 64-bit (x86_64)</p>
+            <p>ขนาดไฟล์: ~4.0 GB · อัปเดตล่าสุด: 06/11/2026</p>
+          </div>
+          <div class="download-actions">
+            <!-- 🔴 เปลี่ยน href ให้เป็น URL ของไฟล์ ISO ของคุณ -->
+            <a class="button-primary" href="/downloads/beroza-os-1.0-amd64.iso">
+              ดาวน์โหลด ISO
+            </a>
+            <a class="text-link" href="/downloads/SHA256SUMS">
+              ค่า SHA256 และไฟล์ตรวจสอบ
+            </a>
+          </div>
+        </article>
+
+        <div class="notice">
+          <strong>ก่อนติดตั้ง:</strong>
+          แนะนำให้สำรองข้อมูลสำคัญ และตรวจสอบว่าเครื่องของคุณรองรับระบบ UEFI สำหรับการติดตั้ง
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" style="background: #1a1a1a; color: #fff; padding: 80px 0;">
+      <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+        
+        <div style="flex: 1; min-width: 300px;">
+          <h2 style="color: #fff; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 20px;">
+            ประสบการณ์ที่ลงตัว <br>
+            <span style="color: var(--brand);">ในแบบฉบับ Beroza OS</span>
+          </h2>
+          <p style="color: #ccc; margin-bottom: 30px; font-size: 1.1rem; line-height: 1.8;">
+            เราออกแบบอินเทอร์เฟซให้เรียบง่าย สวยงาม และใช้งานได้จริง 
+            ทุกดีเทลถูกปรับแต่งมาเพื่อให้คุณทำงานได้อย่างราบรื่นที่สุด
+          </p>
+          <a href="#download" class="button" style="background: var(--brand); color: #fff; border: none; padding: 12px 24px; border-radius: 6px; text-decoration: none; display: inline-block;">
+            ดาวน์โหลดเลย
+          </a>
+        </div>
+
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+          <img src="1112.png" alt="Beroza OS Desktop" 
+               style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #333;"
+               onerror="this.src='https://via.placeholder.com/600x400/0f766e/ffffff?text=Beroza+OS+Desktop'">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- สเปกเครื่อง (System Requirements) -->
+    <section id="requirements">
+      <div class="container">
+        <h2>ข้อมูลจำเพาะของระบบ</h2>
+        <p class="section-intro">
+          ตรวจสอบสเปกเครื่องของคุณก่อนติดตั้ง เพื่อประสบการณ์การใช้งานที่ลื่นไหลที่สุด
+        </p>
+        
+        <div class="info-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <article class="info-card">
+            <h3>💻 ซีพียู (CPU)</h3>
+            <p>สถาปัตยกรรม 64-bit (x86_64) <br> ความเร็ว 2.0 GHz ขึ้นไป</p>
+          </article>
+          <article class="info-card">
+            <h3>🧠 หน่วยความจำ (RAM)</h3>
+            <p>ขั้นต่ำ 2 GB <br> แนะนำ 4 GB ขึ้นไป</p>
+          </article>
+          <article class="info-card">
+            <h3>💾 พื้นที่จัดเก็บ (Storage)</h3>
+            <p>ขั้นต่ำ 15 GB <br> แนะนำ 25 GB ขึ้นไป</p>
+          </article>
+          <article class="info-card">
+            <h3>🖼️ การ์ดจอ (GPU)</h3>
+            <p>รองรับ OpenGL 2.1 <br> หรือสูงกว่า</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="background: var(--soft);">
+      <div class="container">
+        <h2>ทำไมต้องเป็น Beroza OS?</h2>
+        <p class="section-intro">
+          เราออกแบบมาให้เรียบง่าย ใช้งานได้จริง และมีเอกลักษณ์ในแบบของตัวเอง
+        </p>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <h3>✨ สวยงามและเรียบง่าย</h3>
+            <p>อินเทอร์เฟซที่ถูกออกแบบมาอย่างพิถีพิถัน ใช้งานง่าย ไม่ซับซ้อน</p>
+          </article>
+          <article class="info-card">
+            <h3>🚀 เบาและรวดเร็ว</h3>
+            <p>ปรับแต่งระบบให้ทำงานได้อย่างมีประสิทธิภาพสูงสุด</p>
+          </article>
+          <article class="info-card" id="help">
+            <h3>📖 พร้อมคู่มือ</h3>
+            <p><a href="/guide">อ่านคู่มือการติดตั้งและการใช้งานเบื้องต้น</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🔥 ส่วนที่เพิ่มใหม่: คำถามที่พบบ่อย (FAQ) 🔥 -->
+    <section id="faq" style="padding: 60px 0; background: #fff;">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: 40px;">คำถามที่พบบ่อย</h2>
+        
+        <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+          
+          <details style="background: var(--soft); padding: 15px 20px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
+            <summary style="font-weight: 700; color: var(--brand-dark);">Beroza OS ใช้งานฟรีจริงไหม?</summary>
+            <p style="margin-top: 10px; color: var(--muted);">ฟรี 100% ครับ! เป็นระบบปฏิบัติการโอเพนซอร์สที่ทุกคนสามารถดาวน์โหลดไปใช้งาน ปรับแต่ง หรือแจกจ่ายต่อได้ตามเงื่อนไข</p>
+          </details>
+
+          <details style="background: var(--soft); padding: 15px 20px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
+            <summary style="font-weight: 700; color: var(--brand-dark);">สามารถติดตั้งคู่กับ Windows ได้ไหม?</summary>
+            <p style="margin-top: 10px; color: var(--muted);">ได้ครับ! คุณสามารถแบ่งพื้นที่ฮาร์ดดิสก์ (Dual-boot) เพื่อเลือกใช้งานระหว่าง Windows และ Beroza OS ได้ โดยแนะนำให้สำรองข้อมูลก่อนติดตั้งทุกครั้ง</p>
+          </details>
+
+          <details style="background: var(--soft); padding: 15px 20px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border);">
+            <summary style="font-weight: 700; color: var(--brand-dark);">เล่นเกมบน Beroza OS ได้ไหม?</summary>
+            <p style="margin-top: 10px; color: var(--muted);">สามารถเล่นเกมผ่านโปรแกรม Steam (Proton) ได้หลายเกม แต่เกมออนไลน์บางตัวที่ใช้ระบบป้องกันการโกง (Anti-cheat) เข้มงวดอาจจะยังไม่รองรับครับ</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+        
+        <div style="flex: 1; min-width: 200px;">
+          <h3 style="color: var(--brand); margin-bottom: 10px; font-size: 1.2rem;">Beroza OS</h3>
+          <p style="font-size: 0.9rem;">ระบบปฏิบัติการลินุกซ์ที่เรียบง่าย<br>สวยงาม และเป็นมิตรกับคุณ</p>
+        </div>
+        
+        <div style="flex: 1; min-width: 150px;">
+          <h4 style="margin-bottom: 10px; font-size: 1rem;">ลิงก์ด่วน</h4>
+          <ul style="font-size: 0.9rem;">
+            <li><a href="#download" style="text-decoration: none;">ดาวน์โหลด</a></li>
+            <li><a href="#screenshots" style="text-decoration: none;">ภาพหน้าจอ</a></li>
+            <li><a href="#about" style="text-decoration: none;">เกี่ยวกับระบบ</a></li>
+          </ul>
+        </div>
+        
+        <div style="flex: 1; min-width: 150px;">
+          <h4 style="margin-bottom: 10px; font-size: 1rem;">ติดต่อ</h4>
+          <ul style="font-size: 0.9rem;">
+            <li><a href="#" style="text-decoration: none;">ฟอรัมชุมชน</a></li>
+            <li><a href="#" style="text-decoration: none;">รายงานปัญหา (GitHub)</a></li>
+            <li><a href="#" style="text-decoration: none;">อีเมล: support@beroza.os</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align: center; border-top: 1px solid var(--border); padding-top: 20px; margin-top: 20px; color: var(--muted); font-size: 0.85rem;">
+        <p>© 2026 <strong>Beroza OS Project</strong> · สงวนลิขสิทธิ์</p>
+        <p>สร้างสรรค์ด้วยความตั้งใจ 🍓 (ระบบปฏิบัติการลินุกซ์ที่เปิดให้ใช้งานฟรี)</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
